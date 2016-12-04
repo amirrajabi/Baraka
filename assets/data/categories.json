@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "category": "love",
+      "bg": "http://www.hoor.com.au/baraka/images/image_header.jpg"
+    },
+    {
+      "id": 1,
+      "category": "wisdom",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/wisdom.jpg"
+    },
+    {
+      "id": 2,
+      "category": "hu",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/hu.jpg"
+    },
+    {
+      "id": 3,
+      "category": "change",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/change.jpg"
+    },
+    {
+      "id": 4,
+      "category": "life",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/life.jpg"
+    },
+    {
+      "id": 5,
+      "category": "attitude",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/attitude.jpg"
+    },
+    {
+      "id": 6,
+      "category": "god",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/god.jpg"
+    },
+    {
+      "id": 7,
+      "category": "karma",
+      "bg": "http://www.hoor.com.au/baraka/images/cat/karma.jpg"
+    }
+  ]
+}
