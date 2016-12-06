@@ -34,11 +34,10 @@ export class Main extends Component {
                     Baraka
                 </Text>
                 <Text style={styles.logoFooter}>
-                    From HOOR Studio with LOVE
+                    HOOR STUDIO
                 </Text>
             </LinearGradient> :
             <View style={styles.introHide}></View>;
-
 
         return (
             <View style={styles.container}>
@@ -52,7 +51,7 @@ export class Main extends Component {
                     navigationBarHidden={true}
                     shadowHidden={true}
                     initialRoute={{
-                      title: 'Home',
+                      title: 'Quote',
                       component: Home
                     }}
                 />
@@ -67,7 +66,8 @@ const styles = StyleSheet.create({
     container: {
         position: 'relative',
         flex: 1,
-        backgroundColor: '#feeccf'
+        backgroundColor: '#032c64',
+        zIndex: 2
     },
     intro: {
         flex: 1,

@@ -29,7 +29,8 @@ export class Categories extends Component {
             component: Quotes,
             passProps: {
                 cat: cat,
-                quotes: this.props.quotes
+                quotes: this.props.quotes,
+                bg: this.props.bg
             },
             navigationBarHidden: false,
             shadowHidden: true
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
         height: 84,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(0,51,95,0.25)',
+        backgroundColor: 'rgba(0,51,95,0.3)',
         borderBottomWidth: 1,
         borderBottomColor: 'rgba(256, 256, 256, 0.1)'
     },

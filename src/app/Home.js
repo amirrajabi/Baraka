@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {Categories} from './Categories';
 import {
+    AlertIOS,
     View,
     Text,
     Image,
@@ -36,8 +37,6 @@ export class Home extends Component {
 
     componentWillMount() {
         this.getHomeData();
-        this.getQuotsData();
-        this.getCategoriesData();
     }
 
     getHomeData() {
@@ -48,11 +47,19 @@ export class Home extends Component {
                         error: 'User not found'
                     })
                 } else {
+
+                    this.getQuotsData();
+                    this.getCategoriesData();
+
                     this.setState({
                         headerUrl: res.image_header
                     })
                 }
-            });
+            })
+            .catch(() => {
+                AlertIOS.alert('Error', 'You need to be connected to the internet')
+            })
+            .done();
     }
 
     getQuotsData() {
@@ -133,12 +140,16 @@ export class Home extends Component {
 
                 <View style={styles.content}>
 
+                    <Text style={styles.logoText}>
+                        BARAKA
+                    </Text>
+
                     <Text style={styles.titleText}>
                         Quote Of The Day
                     </Text>
 
                     <Text style={styles.quoteText}>
-                        " {this.state.dayQuote} "
+                        "{this.state.dayQuote}"
                     </Text>
 
                     <Text style={styles.footer}>
@@ -188,12 +199,20 @@ const styles = StyleSheet.create({
     },
     content: {
         position: 'absolute',
-        top: width / 4,
+        top: width / 6,
         padding: 20,
         width: width
     },
+    logoText: {
+        fontSize: 22,
+        color: '#032c64',
+        backgroundColor: 'rgba(0,0,0,0)',
+        textAlign: 'center',
+        marginBottom: 0,
+        fontWeight: '100'
+    },
     titleText: {
-        fontSize: 40,
+        fontSize: 20,
         color: '#032c64',
         backgroundColor: 'rgba(0,0,0,0)',
         textAlign: 'center',

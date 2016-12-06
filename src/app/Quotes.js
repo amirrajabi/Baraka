@@ -12,7 +12,7 @@ import {
     StyleSheet,
     Dimensions
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {BlurView} from 'react-native-blur';
 
 const {width, height} = Dimensions.get('window');
 
@@ -24,12 +24,13 @@ export class Quotes extends Component {
     }
 
     render() {
+
         let quotes = this.props.quotes,
             list = quotes.map((item, index) => {
                 if (quotes[index].category.toLowerCase() === this.props.cat.toLowerCase()) {
                     let quote = <Text style={styles.quote}
                                       underlayColor="transparent">
-                        " {quotes[index].quote} "
+                        "{quotes[index].quote}"
                     </Text>;
                     return (
                         <View key={index}>
@@ -45,18 +46,28 @@ export class Quotes extends Component {
                 }
             });
         return (
-            <LinearGradient colors={['#1AD6FD', '#1D62F0']} style={styles.container}>
-                <ScrollView style={styles.container}>
+
+            <View style={styles.container}>
+                <Image style={styles.catBg}
+                       source={{uri: this.props.bg}}>
+                    <BlurView blurType="light" blurAmount={50} style={styles.blur}>
+                    </BlurView>
+                </Image>
+
+                <ScrollView style={styles.catList}>
                     {list}
                 </ScrollView>
-            </LinearGradient>
+            </View>
+
         )
     }
 
-};
+}
+;
 
 var styles = StyleSheet.create({
     container: {
+        position: 'relative',
         flex: 1
     },
     rowContainer: {
@@ -66,15 +77,14 @@ var styles = StyleSheet.create({
         paddingBottom: 30,
         padding: 20,
         borderBottomWidth: 1,
+        backgroundColor: 'rgba(0,51,95,0.3)',
         borderBottomColor: 'rgba(256, 256, 256, 0.1)'
     },
     quote: {
         fontSize: 26,
         fontWeight: '100',
         paddingBottom: 20,
-        color: '#fff',
-        textAlign: 'center',
-        backgroundColor: 'rgba(0,51,95,0)'
+        color: '#fff'
     },
     from: {
         fontSize: 11,
@@ -89,5 +99,25 @@ var styles = StyleSheet.create({
         fontWeight: '100',
         textAlign: 'right',
         backgroundColor: 'rgba(0,51,95,0)'
+    },
+    catList: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: width,
+        height: height
+    },
+    catTitle: {
+        fontSize: 40,
+        fontWeight: '100',
+        color: '#fff'
+    },
+    catBg: {
+        width: width,
+        height: height
+    },
+    blur: {
+        width: width,
+        height: height
     }
 });
