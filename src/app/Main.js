@@ -23,7 +23,7 @@ export class Main extends Component {
         };
         setTimeout(() => {
             this.setState({intro: false});
-        }, 5000);
+        }, 2000);
     }
 
     render() {
