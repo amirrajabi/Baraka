@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {
-    AppRegistry,
-    StyleSheet
+    AppRegistry
 } from 'react-native';
 import {Main as Root} from './src/app/Main';
 

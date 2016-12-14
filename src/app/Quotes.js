@@ -36,8 +36,8 @@ export class Quotes extends Component {
                         <View key={index}>
                             <View style={styles.rowContainer}>
                                 {quote}
-                                <Text style={styles.from}
-                                      underlayColor="transparent">{quotes[index].from}</Text>
+                                <Text style={styles.author}
+                                      underlayColor="transparent">{quotes[index].author}</Text>
                                 <Text style={styles.source}
                                       underlayColor="transparent"> __ {quotes[index].source} </Text>
                             </View>
@@ -81,12 +81,12 @@ var styles = StyleSheet.create({
         borderBottomColor: 'rgba(256, 256, 256, 0.1)'
     },
     quote: {
-        fontSize: 26,
-        fontWeight: '100',
+        fontSize: 22,
+        fontWeight: '300',
         paddingBottom: 20,
         color: '#fff'
     },
-    from: {
+    author: {
         fontSize: 11,
         fontWeight: '100',
         textAlign: 'right',

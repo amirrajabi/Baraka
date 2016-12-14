@@ -75,7 +75,7 @@ export class Home extends Component {
                     this.setState({
                         allQuote: res,
                         dayQuote: res[randomNum].quote,
-                        author: res[randomNum].from,
+                        author: res[randomNum].author,
                         source: res[randomNum].source
                     })
                 }
@@ -103,7 +103,7 @@ export class Home extends Component {
             res = this.state.allQuote;
         this.setState({
             dayQuote: res[randomNum].quote,
-            author: res[randomNum].from,
+            author: res[randomNum].author,
             source: res[randomNum].source
         })
     }
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontWeight: '300',
         color: '#032c64',
-        height: 100
+        height: 150
     },
     footer: {
         backgroundColor: 'rgba(0,0,0,0)',

@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     },
     catTitle: {
         fontSize: 40,
-        fontWeight: '100',
+        fontWeight: '200',
         color: '#fff'
     },
     catBg: {

@@ -3,15 +3,15 @@
  */
 var api = {
     getHome(){
-        var url = `http://www.hoor.com.au/baraka/home.json`;
+        var url = `http://www.hoor.com.au/Baraka/home.json`;
         return fetch(url).then((res) => res.json())
     },
     getCategories(){
-        var url = `http://www.hoor.com.au/baraka/categories.json`;
+        var url = `http://www.hoor.com.au/Baraka/categories.json`;
         return fetch(url).then((res) => res.json());
     },
     getQuotes(){
-        var url = `http://www.hoor.com.au/baraka/quotes.json`;
+        var url = `http://www.hoor.com.au/Baraka/quotes.json`;
         return fetch(url).then((res) => res.json());
     }
 };
